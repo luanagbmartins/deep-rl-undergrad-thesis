@@ -1,0 +1,33 @@
+\chapter{Conclusão}
+\label{cap:conclusao}
+
+Neste trabalho foram estudados os conceitos de aprendizado de máquina, em especial o aprendizado por reforço. Dentre as diferentes técnicas que podem ser utilizadas para realizar a tarefa de aprendizado por reforço, as abordagens baseadas em redes neurais profundas têm apresentado resultados satisfatórios no aprendizado de problemas complexos de alta dimensão. Dentre essas técnicas, destaca-se o algoritmo \textit{Proximal Policy Optimization} (PPO), que obteve melhor desempenho geral em comparação a outros algoritmos de aprendizado por reforço.
+
+Apesar dos grandes avanços realizados durante os últimos anos no desenvolvimento de algoritmos que aprendem tipos específicos de problemas, os agentes falham em generalizar entre tarefas, o que se mostrou não ser diferente para o algoritmo PPO. Contudo, os ambientes de avaliação de aprendizado por reforço insistem em avaliar o desempenho dos algoritmos nos mesmos ambientes de treinamento. Quando é divulgado que um algoritmo foi capaz de aprender uma política capaz de jogar bem um jogo, pode significar, na verdade, que a política encontrou ações ideais para o espaço de observações que o jogo fornece. 
+
+
+Nos testes realizados foram observados que os agentes tendem a explorar o determinismo do ambiente, ignorando os estados e memorizando sequências de ação efetivas que os levam a atingir pontuações cada vez maiores, sem aprender conceitos gerais do jogo. Esses agentes sofrem de sobre-ajuste ao conjunto de treinamento, sendo sensíveis a pequenas perturbações nos ambientes e incapazes de generalizar para estados não vistos anteriormente. Entretanto, foi possível notar que conjuntos de treinamento com uma maior variedade contribuem para uma melhor exploração da política, levando a resultados melhores em comparação a conjuntos de treinamento com baixa variedade. Acredita-se que esse aumento no desempenho do treinamento provém de um currículo implícito fornecido por um conjunto diversificado de fases. 
+
+Em um ambiente de aprendizado supervisionado, a generalização é obtida treinando um modelo em um grande conjunto de dados, geralmente com milhares de exemplos. A introdução de fases geradas proceduralmente, encorajadas pelo GVGAI\_GYM, permite que os comportamentos treinados generalizem para fases não vistas na distribuição do treinamento. Entretanto, os agentes sofrem para generalizar a partir de poucas fases de treinamento disponíveis.
+
+De maneira equivalente ao aprendizado supervisionado, os algoritmos de aprendizado por reforço devem alcançar uma boa generalização se muitas variações dos ambientes forem usadas durante o treinamento. Trabalhos recentes exploram essa preocupação gerando proceduralmente enormes conjuntos de treinamento e teste para avaliar melhor a capacidade de generalização dos algoritmos \cite{cobbe2019, cobe18}, reforçando que algoritmos de aprendizado por reforço ainda são ineficientes em termos de amostragem.
+
+Como trabalhos futuros são propostas algumas direções com foco em uma melhor eficiência de amostragem, buscando diminuir a necessidade de grandes conjuntos de treinamento. Maiores investigações devem ser realizadas do impacto de diferentes arquiteturas e formas de regularização, como sugerido em \cite{cobe18}. Além disso, \cite{curiositylarge, pathak} fazem uso de modelos de dinâmica inversa afim de melhorar a extração de características da observação, de forma que características mais importantes para a decisão do agente tenham uma maior importância. Isso pode ser explorado no contexto de generalização por poder desencorajar a memorização de sequência de ações efetivas. 
+
+
+
+% Por fim, essas ideias podem ser aplicadas no contexto de robótica para diminuir a dificuldade de levar um modelo treinado em um ambiente de simulação para a vida real.
+
+
+% Além disso, pesquisas mostram que os agentes de aprendizado por reforço orientados pela curiosidade foram capazes de generalizar melhor com ambientes inexplorados .
+
+
+% Ainda que o aprendizado por reforço tem se mostrado muito bem-sucedido em ambientes fechados, como jogos eletrônicos, é difícil de ser aplicado em ambientes do mundo real. Como visto neste trabalho, o aprendizado por reforço é ineficiente em termos de amostragem, exigindo uma vasta quantidade de exemplos de treinamento para aprender tarefas mais complexas. Para aplicações no mundo real, a ausência da capacidade de generalização abre grandes lacunas entre ambientes simulados e reais que dificultam o treinamento de modelos.  
+
+% Como trabalhos futuros são propostas algumas direções com o objetivo de melhorar o aprendizado de agentes inteligentes, com foco em uma melhor eficiência de amostragem. Maiores investigações devem ser realizadas do impacto de diferentes arquiteturas e formas de regularização, como realizado em \cite{cobe18}. Além disso, pesquisas mostram que os agentes de aprendizado por reforço orientados pela curiosidade foram capazes de generalizar melhor com ambientes inexplorados \cite{curiositylarge, pathak}.
+
+% No geral, encontramos algumas evidências promissoras que mostram que as habilidades aprendidas pela curiosidade ajudam nosso agente a explorar com eficiência em novos ambientes.
+
+% Por outro lado, a adaptação ao meio de interação nem sempre são indesejáveis. Seres humanos constantemente super-ajustam sub-rotinas através de memórias musculares, permitindo agir de maneira hábil eficientemente na maioria das situações do dia-a-dia. Contudo, uma das principais habilidades dos seres humanos é sua capacidade em detectar falhas provenientes dessas ações automáticas e se adaptar, sendo capaz de lidar com as adversidades.
+
+% Para que os agentes de aprendizagem por reforço possam ser confiáveis para atuar em situações de alto risco no mundo real, é necessário o desenvolvimento da capacidade de lidar com falhas e situações inesperadas. É necessário portanto generalizar sobre os perigos comuns que poderia ter sido experimentado antes, mas em um ambiente não visto anteriormente, para então pode ser implanto com segurança no mundo real.

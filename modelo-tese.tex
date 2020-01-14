@@ -1,0 +1,105 @@
+% Exemplo de dissertação do INF-UFG com texto em portugues formatado com LaTeX
+\documentclass[relatorio, nocolorlinks]{inf-ufg}
+% Opções da classe inf-ufg (ao usar mais de uma, separe por vírgulas)
+%   [tese]         -> Tese de doutorado.
+%   [dissertacao]  -> Dissertação de mestrado (padrão).
+%   [monografia]   -> Monografia de especialização.
+%   [relatorio]    -> Relatório final de graduação.
+%   [abnt]         -> Usa o estilo "abnt-alf" de citação bibliográfica.
+%   [nocolorlinks] -> Os links de navegação no texto ficam na cor preta.
+%                     Use esta opção para gerar o arquivo para impressão
+%                     da versão final do seu texto!!!
+\usepackage{amsmath,amssymb}
+\usepackage{pdfpages}
+\DeclareMathOperator{\E}{\mathbb{E}}
+
+%----------------------------------------------------- INICIO DO DOCUMENTO %
+\usepackage{caption}
+\begin{document}
+
+%------------------------------------------ AUTOR, TÍTULO E DATA DE DEFESA %
+\autor{Luana Guedes Barros Martins} % (José da Silva)
+\autorR{Martins, Luana Guedes Barros} % (da Silva, José)
+
+\titulo{Análise da capacidade de generalização de algoritmos de aprendizagem por reforço no contexto de jogos eletrônicos}
+% \subtitulo{\textless Subtítulo do Trabalho\textgreater}
+
+\cidade{Goiânia} % Nome da cidade em foi desenvolvido o trabalho
+\dia{12} %
+\mes{12} % Data da apresentação/defesa do trabalho
+\ano{2019} % Formato numérico: \dia{01}, \mes{01} e \ano{2009}
+
+%-------------------------------------------------------------- ORIENTADOR %
+\orientadora{Dra. Telma Woerle de Lima Soares}
+\orientadoraR{Soares, Tema Woerle de Lima}
+
+%-------------------------------------------------- INSTITUIÇÃO E PROGRAMA %
+\universidade{Universidade Federal de Goiás} % {Universidade Federal de Goiás}
+\uni{UFG}         % UFG
+\unidade{Instituto de Informática} %Instituto de Informática
+%\departamento{\textless Nome do Departamento\textgreater} %Unidades com mais de um depto.
+
+%\universidadeco{\textless Nome da Universidade do Co-orientador\textgreater}
+%\unico{\textless Sigla da Universidade do Co-orientador\textgreater}
+%\unidadeco{\textless Nome da Unidade Acadêmica do Co-orientador\textgreater}
+
+\programa{Ciência da Computação} % Computação
+\concentracao{Ciência da Computação, Inteligência Artificial}
+
+%-------------------------------------------------- ELEMENTOS PRÉ-TEXTUAIS %
+\capa    % Gera o modelo da capa externa do trabalho
+\includepdf[pages=1, offset=0 -75]{publicacao.pdf}
+%\publica % Gera a autorização para publicação em formato eletrônico
+\rosto   % Primeira folha interna do trabalho
+
+% \input{./pre/pre_aprovacao}
+\includepdf[pages=1, offset=-10 -75]{aprovacao.pdf}
+\input{./pre/pre_direitos}
+\input{./pre/pre_dedicatoria}
+\input{./pre/pre_agradecimentos}
+\input{./pre/pre_epigrafe}
+\input{./pre/pre_resumo}
+\input{./pre/pre_abstract}
+
+\tabelas[figtabalg]
+%Opções:
+%nada [] -> Gera apenas o sumário
+%fig     -> Gera o sumário e a lista de figuras
+%tab     -> Sumário e lista de tabelas
+%alg     -> Sumário e lista de algoritmos
+%cod     -> Sumário e lista de códigos de programas
+%
+% Pode-se usar qualquer combinação dessas opções.
+% Por exemplo:
+%  figtab       -> Sumário e listas de figuras e tabelas
+%  figtabcod    -> Sumário e listas de figuras, tabelas e
+%                  códigos de programas
+%  figtabalg    -> Sumário e listas de figuras, tabelas e algoritmos
+%  figtabalgcod -> Sumário e listas de figuras, tabelas, algoritmos e
+%                  códigos de programas
+
+%--------------------------------------------------------------- CAPÍTULOS %
+\input{./tex/cap_I}
+\input{./tex/cap_II}
+% \input{./tex/cap_III}
+\input{./tex/cap_IV}
+\input{./tex/cap_V}
+\input{./tex/cap_VI}
+
+%------------------------------------------------------------ BIBLIOGRAFIA %
+\cleardoublepage
+\arial
+\bibliography{modelo-tese} %%% Nomes dos seus arquivos .bib
+\label{ref-bib}
+
+%--------------------------------------------------------------- APÊNDICES %
+\apendices
+
+\input{./pos/apend_I}
+% \input{./pos/apend_II}
+
+\end{document}
+
+%------------------------------------------------------------------------- %
+%        F I M   D O  A R Q U I V O :  m o d e l o - t e s e . t e x       %
+%------------------------------------------------------------------------- %
