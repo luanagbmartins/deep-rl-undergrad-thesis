@@ -3,6 +3,7 @@
 Bachelor's Thesis presented to the coordination of the Computer Science course of the Institute of Informatics of Universidade Federal de Goiás (UFG), as a partial requirement to obtain the title of Bachelor in Computer Science. 
 
 The code for this study is available [here](https://github.com/luanagbmartins/general-game-playing).
+
 To read the whole analysis, [click here](https://github.com/luanagbmartins/drl-undergrad-thesis/blob/master/MonografiaTCC.pdf) (Portuguese).
 
 ## Abstract
